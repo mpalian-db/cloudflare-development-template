@@ -97,12 +97,3 @@ git add wrangler.toml
 git commit -m "chore: update wrangler.toml with deployed resource IDs"
 ```
 
-## Commit
-
-```bash
-git add .claude/skills/deploy.md
-git commit -m "Add /deploy skill for Cloudflare deployment
-
-Handles resource creation (D1, KV, R2, Queues, Vectorize),
-database migrations, build, deploy, and verification."
-```

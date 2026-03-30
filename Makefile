@@ -18,7 +18,7 @@ test: ## Run tests
 lint: ## Run linter
 	npm run lint
 
-migrate: ## Run D1 database migrations
+migrate: ## Run D1 database migrations (requires /add-database)
 	npx wrangler d1 migrations apply
 
 clean: ## Remove build artifacts

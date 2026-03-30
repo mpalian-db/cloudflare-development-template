@@ -128,6 +128,7 @@ Use these when relevant:
 - `superpowers:systematic-debugging` -- when debugging issues
 - `superpowers:verification-before-completion` -- before declaring work done
 - `superpowers:requesting-code-review` -- to review completed work
+- `superpowers:finishing-a-development-branch` -- branch completion
 
 **Context7 plugin (`context7@claude-plugins-official`):**
 - Use `resolve-library-id` and `query-docs` to look up current documentation for any library (React, Hono, Vite, etc.) before generating code that depends on it.
