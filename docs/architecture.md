@@ -39,6 +39,7 @@ A port is a TypeScript interface that describes what a service does, without say
 export interface DatabasePort {
   query<T>(sql: string, params?: unknown[]): Promise<QueryResult<T>>;
   execute(sql: string, params?: unknown[]): Promise<QueryResult>;
+  batch(statements: Array<{ sql: string; params?: unknown[] }>): Promise<QueryResult[]>;
 }
 ```
 

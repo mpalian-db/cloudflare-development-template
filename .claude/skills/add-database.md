@@ -22,8 +22,7 @@ The adapter:
 - Accepts a `D1Database` binding in its constructor
 - Maps `query()` to `d1.prepare(sql).bind(...params).all()`
 - Maps `execute()` to `d1.prepare(sql).bind(...params).run()`
-- Maps `batch()` to `d1.batch()`
-- Maps `transaction()` -- note that D1 does not support interactive transactions; implement as a batch of statements wrapped in a savepoint
+- Maps `batch()` to `d1.batch()` for atomic grouped operations
 
 ### 2. Update `wrangler.toml`
 

@@ -15,6 +15,4 @@ export interface DatabasePort {
   batch(
     statements: Array<{ sql: string; params?: unknown[] }>,
   ): Promise<QueryResult[]>;
-
-  transaction<T>(fn: (tx: DatabasePort) => Promise<T>): Promise<T>;
 }

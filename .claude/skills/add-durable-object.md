@@ -21,8 +21,9 @@ Create `app/adapters/cloudflare/durable-session.ts` that implements `DurableSess
 The adapter is a Durable Object class that:
 - Uses `this.ctx.storage` for `getState()` and `setState()`
 - Uses `this.ctx.storage.setAlarm()` for `alarm()`
-- Uses `this.ctx.acceptWebSocket()` for `acceptWebSocket()`
+- Uses `this.ctx.acceptWebSocket(ws)` for `acceptWebSocket()`, where `ws` is the server side of a `new WebSocketPair()`
 - Implements `broadcast()` by iterating `this.ctx.getWebSockets()` and sending to each
+- Implements `webSocketMessage()`, `webSocketClose()`, and `webSocketError()` handlers for the Hibernation API
 - Exports the class so it can be referenced in `wrangler.toml`
 
 Also create a helper function or factory for obtaining a Durable Object stub from a Hono route handler, so business logic does not need to interact with the `DurableObjectNamespace` binding directly.
