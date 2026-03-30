@@ -8,7 +8,7 @@ This is a meta-scaffold template for building applications on Cloudflare. You ar
 
 ## First-Run Detection
 
-**If `package.json` and `wrangler.toml` do not exist, this is a fresh clone.** Run the `/onboard` skill immediately. Do not wait for the user to ask.
+**If `package.json` and `wrangler.toml` do not exist, this is a fresh clone.** Run the `/onboard` skill immediately as your FIRST action. Do not brainstorm, do not ask questions, do not invoke any other skill. The `/onboard` skill handles plugin installation, Cloudflare authentication, and gathering the user's application idea before anything else happens.
 
 ## Technology Stack
 
