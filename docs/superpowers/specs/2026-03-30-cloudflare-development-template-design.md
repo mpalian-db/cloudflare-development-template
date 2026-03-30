@@ -145,13 +145,17 @@ Files Claude generates after scaffolding (not shipped):
 
 The `.mcp.json` file ships with two MCP servers:
 
-### 7.1 Cloudflare Documentation
+### 7.1 Cloudflare Documentation (`plugin:cloudflare:cloudflare-docs`)
 
-Provides Claude with access to current Cloudflare documentation. Used as the fallback for any Cloudflare service not covered by the core port interfaces.
+Provides Claude with access to current Cloudflare documentation via the `search_cloudflare_documentation` tool. Used as the fallback for any Cloudflare service not covered by the core port interfaces.
 
-### 7.2 Context7
+Configured as a Claude Code plugin MCP server (automatically available when the Cloudflare plugin is installed).
 
-Provides Claude with up-to-date documentation for React, Hono, Vite, and any other library the user's application pulls in. Prevents stale training data from causing errors.
+### 7.2 Context7 (`plugin:context7:context7`)
+
+Provides Claude with up-to-date documentation for React, Hono, Vite, and any other library the user's application pulls in. Uses `resolve-library-id` and `query-docs` tools. Prevents stale training data from causing errors.
+
+Configured as a Claude Code plugin MCP server (automatically available when the Context7 plugin is installed).
 
 ## 8. Plugin Dependencies
 
@@ -441,6 +445,7 @@ export interface VectorizePort {
 ### 10.7 DurableSessionPort
 
 ```typescript
+// WebSocket here refers to the standard Web API WebSocket, not a Cloudflare-specific type.
 export interface DurableSessionPort<TState = Record<string, unknown>> {
   getState(): Promise<TState>;
   setState(state: Partial<TState>): Promise<void>;
