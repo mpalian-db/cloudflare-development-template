@@ -63,6 +63,12 @@ export class D1DatabaseAdapter implements DatabasePort {
     const result = await this.db.prepare(sql).bind(...(params ?? [])).run();
     return { rows: [], rowsAffected: result.meta.changes };
   }
+
+  async batch(statements: Array<{ sql: string; params?: unknown[] }>): Promise<QueryResult[]> {
+    const prepared = statements.map((s) => this.db.prepare(s.sql).bind(...(s.params ?? [])));
+    const results = await this.db.batch(prepared);
+    return results.map((r) => ({ rows: r.results ?? [], rowsAffected: r.meta.changes } as QueryResult));
+  }
 }
 ```
 
