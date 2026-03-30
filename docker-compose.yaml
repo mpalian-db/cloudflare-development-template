@@ -1,0 +1,5 @@
+# Docker Compose configuration.
+# Claude populates this file during /scaffold based on the application's needs.
+# Typical services: app (the Worker), database (local D1 substitute for testing).
+
+services: {}
