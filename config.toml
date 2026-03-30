@@ -1,0 +1,7 @@
+# Application Configuration
+# This file is checked into git. Do NOT put secrets here -- use .env instead.
+# Claude updates this file when scaffolding the application and adding services.
+
+[app]
+name = ""
+environment = "development"

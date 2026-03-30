@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.wrangler/
+.git/
+.gitignore
+.env
+.env.local
+.env.*.local
+*.log
+npm-debug.log*
+coverage/
+docs/
+.claude/
+*.md
+!README.md
