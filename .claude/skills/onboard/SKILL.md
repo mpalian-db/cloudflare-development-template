@@ -64,7 +64,9 @@ If it fails, ask the user to try again.
 
 ### 4. Gather the Application Idea
 
-Ask the user to describe their application. Use open-ended prompting:
+If the user has already described their idea (check their first message), skip the prompt below and go straight to clarifying questions.
+
+Otherwise, ask the user to describe their application:
 
 > "What application would you like to build? Describe the idea in your own words -- what it does, who it is for, and any features you have in mind. Do not worry about technical details; I will handle those."
 
@@ -74,7 +76,7 @@ Listen for:
 - Key features and functionality
 - Any specific requirements (e.g., "needs real-time updates", "handles file uploads")
 
-If the description is vague, ask one clarifying question at a time. Do not overwhelm with multiple questions.
+**ONE question at a time.** Ask a single clarifying question, wait for the answer, then ask the next one. Never ask multiple questions in one message -- most users are beginners and will be overwhelmed. This is non-negotiable.
 
 ### 5. Hand Off to Scaffold
 
